@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 10:26:16 by afenzl            #+#    #+#             */
-/*   Updated: 2022/05/20 13:29:39 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/08 19:51:22 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef PRINTF_H
+# define PRINTF_H
 
 # include <stdarg.h>
-# include "../libft.h"
+# include "../libft/libft.h"
 
 int	ft_printf(const char *str, ...);
 int	ft_types(char *save, va_list args, int i);

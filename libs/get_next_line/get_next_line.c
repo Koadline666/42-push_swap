@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 12:13:39 by afenzl            #+#    #+#             */
-/*   Updated: 2022/05/18 13:37:11 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:28:38 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
-char	*ft_new_left_str(char *left_str)
+char	*ft_remainder_of_str(char *str)
 {
 	int		i;
 	int		j;
-	char	*new;
+	char	*remainder;
 
 	i = 0;
 	j = 0;
-	while (left_str[i] != '\n' && left_str[i] != '\0')
+	while (str[i] != '\n' && str[i] != '\0')
 		i++;
-	new = malloc(ft_strlen(left_str) - i + 1);
-	if (new == NULL)
+	remainder = malloc(ft_strlen(str) - i + 1);
+	if (remainder == NULL)
 		return (NULL);
-	if (left_str[i] == '\n')
+	if (str[i] == '\n')
 		i++;
-	while (left_str[i] != '\0')
-		new[j++] = left_str[i++];
-	new[j] = '\0';
-	free(left_str);
-	return (new);
+	while (str[i] != '\0')
+		remainder[j++] = str[i++];
+	remainder[j] = '\0';
+	free(str);
+	return (remainder);
 }
 
-char	*read_to_left_str(int fd, char *left_str)
+char	*read_to_end_of_line(int fd, char *str)
 {
 	char	*buff;
 	int		rd_bytes;
@@ -43,7 +43,7 @@ char	*read_to_left_str(int fd, char *left_str)
 	buff = malloc(BUFFER_SIZE + 1);
 	if (buff == NULL)
 		return (NULL);
-	while (!ft_strchr(left_str, '\n') && rd_bytes != 0)
+	while (!ft_strchr(str, '\n') && rd_bytes != 0)
 	{
 		rd_bytes = read(fd, buff, BUFFER_SIZE);
 		if (rd_bytes == -1)
@@ -52,32 +52,32 @@ char	*read_to_left_str(int fd, char *left_str)
 			return (NULL);
 		}
 		buff[rd_bytes] = '\0';
-		left_str = ft_strjoin(left_str, buff);
+		str = ft_strjoin(str, buff);
 	}
 	free(buff);
-	return (left_str);
+	return (str);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*left_str[1024];
+	static char	*str;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
-	left_str[fd] = read_to_left_str(fd, left_str[fd]);
-	if (left_str[fd] == NULL)
 		return (NULL);
-	line = ft_get_line(left_str[fd]);
+	str = read_to_end_of_line(fd, str);
+	if (str == NULL)
+		return (NULL);
+	line = ft_get_line(str);
 	if (line[0] == '\0')
 	{
 		free(line);
 		return (NULL);
 	}
-	left_str[fd] = ft_new_left_str(left_str[fd]);
-	if (left_str[fd] == NULL)
+	str = ft_remainder_of_str(str);
+	if (str == NULL)
 	{
-		free(left_str[fd]);
+		free(str);
 		return (NULL);
 	}
 	return (line);

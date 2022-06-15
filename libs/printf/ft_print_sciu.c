@@ -6,11 +6,11 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 11:22:05 by afenzl            #+#    #+#             */
-/*   Updated: 2022/04/22 11:22:35 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/08 19:51:03 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "printf.h"
 
 int	ft_do_char(char chr)
 {

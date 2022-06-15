@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 16:31:16 by afenzl            #+#    #+#             */
-/*   Updated: 2022/05/25 18:06:59 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/05/20 14:32:54 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
-# include <stdio.h>
-# include "get_next_line/get_next_line.h"
 
 typedef struct s_list
 {
@@ -70,7 +68,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int		ft_printf(const char *str, ...);
-char	*get_next_line(int fd);
 
 #endif

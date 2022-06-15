@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   libs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 17:45:04 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/07 16:37:01 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/07 16:25:05 by fbruggem          #+#    #+#             */
+/*   Updated: 2022/06/15 05:25:25 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBS_H
+# define LIBS_H
 
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	size_t	count;
-	size_t	i;
+# include "libft/libft.h"
+# include "printf/printf.h"
+# include "get_next_line/get_next_line.h"
 
-	i = 0;
-	if (set == NULL || s1 == NULL)
-	{
-		return (NULL);
-	}
-	while (s1[i] != '\0' && ft_strchr(set, s1[i]))
-		i++;
-	count = ft_strlen(s1);
-	while (count > i && ft_strchr(set, s1[count]))
-		count--;
-	return (ft_substr(s1, i, count - i + 1));
-}
+#endif

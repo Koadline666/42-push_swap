@@ -6,11 +6,11 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 10:27:54 by afenzl            #+#    #+#             */
-/*   Updated: 2022/04/22 11:17:46 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/08 19:51:08 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "printf.h"
 
 int	ft_conversions( char *save, va_list args, int i)
 {

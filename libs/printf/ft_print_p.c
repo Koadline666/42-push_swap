@@ -6,11 +6,11 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 11:30:09 by afenzl            #+#    #+#             */
-/*   Updated: 2022/04/22 11:31:23 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/08 19:50:59 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "printf.h"
 
 char	*ft_hex_p_to_str(unsigned long usn, int c, int num)
 {
