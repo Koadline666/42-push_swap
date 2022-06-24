@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 12:13:39 by afenzl            #+#    #+#             */
-/*   Updated: 2022/05/17 15:28:38 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/24 11:17:08 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_remainder_of_str(char *str)
 	j = 0;
 	while (str[i] != '\n' && str[i] != '\0')
 		i++;
-	remainder = malloc(ft_strlen(str) - i + 1);
+	remainder = malloc(ft_strlen_gnl(str) - i + 1);
 	if (remainder == NULL)
 		return (NULL);
 	if (str[i] == '\n')
@@ -43,7 +43,7 @@ char	*read_to_end_of_line(int fd, char *str)
 	buff = malloc(BUFFER_SIZE + 1);
 	if (buff == NULL)
 		return (NULL);
-	while (!ft_strchr(str, '\n') && rd_bytes != 0)
+	while (!ft_strchr_gnl(str, '\n') && rd_bytes != 0)
 	{
 		rd_bytes = read(fd, buff, BUFFER_SIZE);
 		if (rd_bytes == -1)
@@ -52,7 +52,7 @@ char	*read_to_end_of_line(int fd, char *str)
 			return (NULL);
 		}
 		buff[rd_bytes] = '\0';
-		str = ft_strjoin(str, buff);
+		str = ft_strjoin_gnl(str, buff);
 	}
 	free(buff);
 	return (str);

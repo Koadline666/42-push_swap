@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 11:13:16 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/16 18:57:47 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/24 11:13:35 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include "libs/libs.h"
-
-void	ft_error(int errorcode);
-void	check_input(char **input);
-
-
-#endif
+int	main(int argc, char **argv)
+{
+	if (argc == 1)
+		ft_error(0);
+	check_input(argv);
+	return (0);
+}

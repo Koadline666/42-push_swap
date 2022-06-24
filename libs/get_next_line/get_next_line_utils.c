@@ -6,13 +6,13 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 12:13:36 by afenzl            #+#    #+#             */
-/*   Updated: 2022/05/20 12:22:14 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/24 11:14:35 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-long	ft_strlen(const char *s)
+long	ft_strlen_gnl(const char *s)
 {
 	long	i;
 
@@ -32,7 +32,7 @@ static char	*join(char *s1, const char *s2)
 
 	i = 0;
 	j = 0;
-	new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	new = (char *)malloc(ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1);
 	if (new == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -51,7 +51,7 @@ static char	*join(char *s1, const char *s2)
 	return (new);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	if (s2 == NULL)
 		return (NULL);
@@ -71,7 +71,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return ((char *)s1);
 }
 
-int	ft_strchr(const char *s, int c)
+int	ft_strchr_gnl(const char *s, int c)
 {
 	int		i;
 	char	*p;

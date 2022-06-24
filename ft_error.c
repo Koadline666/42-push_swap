@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 11:13:16 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/16 19:16:12 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/24 11:08:35 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include "libs/libs.h"
-
-void	ft_error(int errorcode);
-void	check_input(char **input);
-
-
-#endif
+void	ft_error(int errorcode)
+{
+	if (errorcode == 0)
+		exit(0);
+}

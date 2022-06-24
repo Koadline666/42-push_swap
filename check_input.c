@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 11:13:16 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/24 11:14:01 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include "libs/libs.h"
+void	check_each_arg(char *arg)
+{
+	printf("hey this is arg |%s|\n", arg);
+}
 
-void	ft_error(int errorcode);
-void	check_input(char **input);
+void	check_input(char **input)
+{
+	int	i;
 
-
-#endif
+	i = 0;
+	while (input[i] != NULL)
+	{
+		check_each_arg(input[i]);
+		i++;
+	}
+}

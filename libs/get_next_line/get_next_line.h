@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 12:13:42 by afenzl            #+#    #+#             */
-/*   Updated: 2022/05/22 13:48:00 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/24 11:10:46 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*get_next_line(int fd);
 char	*read_to_end_of_line(int fd, char *str);
 char	*ft_remainder_of_str(char *str);
 char	*ft_get_line(char *str);
-int		ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
-long	ft_strlen(const char *s);
+int		ft_strchr_gnl(const char *s, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+long	ft_strlen_gnl(const char *s);
 
 #endif
