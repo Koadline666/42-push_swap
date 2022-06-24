@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 11:13:16 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/24 11:20:32 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@
 
 void	ft_error(int errorcode);
 void	check_input(char **input);
-
 
 #endif
