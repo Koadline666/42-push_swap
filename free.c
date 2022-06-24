@@ -1,47 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input.c                                      :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 14:34:49 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/24 13:08:22 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/24 13:09:45 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_each_arg(char *arg)
+void	ft_free2(char **split)
 {
 	int	i;
 
-	printf("string:\n|%s|\n", arg);
-	i = ft_atoi_ps(arg);
-	printf("number:\n|%i|\n", i);
-}
-
-void	check_input(char **input)
-{
-	int		i;
-	int		j;
-	char	**split;
-
-	i = 1;
-	while (input[i] != NULL)
+	i = 0;
+	while (split[i] != NULL)
 	{
-		j = 0;
-		if (input[i][0] == '\0')
-			ft_error();
-		split = ft_split(input[i], ' ');
-		if (split == NULL || split[0] == NULL)
-			ft_error();
-		while (split[j] != NULL)
-		{
-			check_each_arg(split[j]);
-			j++;
-		}
+		free(split[i]);
 		i++;
-		ft_free2(split);
 	}
+	free(split);
 }

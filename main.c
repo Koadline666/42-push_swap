@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:57:47 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 11:20:29 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/24 13:46:32 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc == 1)
-		ft_error(0);
-	check_input(argv);
+	if (argc > 1)
+	{
+		check_input(argv);
+	}
 	return (0);
 }

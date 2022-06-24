@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 05:23:33 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/24 11:05:35 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/24 11:34:07 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,3 +90,4 @@ fclean: clean
 
 re: fclean all
 
+.PHONY: all clean fclean re

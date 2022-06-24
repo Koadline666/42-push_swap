@@ -6,14 +6,15 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:16:12 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 11:20:27 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/24 13:45:23 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(int errorcode)
+void	ft_error(void)
 {
-	if (errorcode == 0)
-		exit(0);
+	write(1, "Error\n", 6);
+	// system("leaks push_swap");
+	exit(1);
 }

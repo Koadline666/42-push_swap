@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 11:20:32 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/24 13:10:26 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "libs/libs.h"
+# include "libft/libs.h"
 
-void	ft_error(int errorcode);
+void	ft_error(void);
+void	ft_free2(char **split);
 void	check_input(char **input);
+int		ft_atoi_ps(const char *str);
 
 #endif
