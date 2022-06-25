@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   make_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/10 19:08:41 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 10:17:28 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/24 14:57:54 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/25 10:02:01 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*new;
+// void	ft_create_stack(void)
+// {
+// 	struct s_stack_a	*head;
+// 	struct s_stack_a	*ptr;
 
-	new = NULL;
-	new = malloc(sizeof(t_list));
-	if (new != NULL)
-	{
-		new->content = content;
-		new->next = NULL;
-	}
-	return (new);
-}
+// 	head = ft_lstnew(NULL);
+// 	ptr = head;
+// 	while (ptr != NULL)
+// 	{
+// 		printf("%i\n", ptr->num);
+// 		ptr = ptr->next;
+// 	}
+// }

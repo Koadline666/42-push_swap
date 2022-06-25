@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 14:34:49 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/25 09:42:52 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	check_each_arg(char *arg)
 {
 	int	i;
 
-	printf("string:\n|%s|\n", arg);
+	// printf("string:\n|%s|\n", arg);
 	i = ft_atoi_ps(arg);
-	printf("number:\n|%i|\n", i);
+	// printf("number:\n|%i|\n", i);
 }
 
 void	check_input(char **input)

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/10 19:08:41 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 10:17:28 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/25 10:04:14 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/25 10:05:45 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef HEADER_H
+# define HEADER_H
 
-t_list	*ft_lstnew(void *content)
+# include <stdio.h>
+# include <stdlib.h>
+# include "../libft/libs.h"
+
+typedef struct s_stack_a
 {
-	t_list	*new;
+	int				num;
+	struct s_list	*prev;
+	struct s_list	*next;
 
-	new = NULL;
-	new = malloc(sizeof(t_list));
-	if (new != NULL)
-	{
-		new->content = content;
-		new->next = NULL;
-	}
-	return (new);
-}
+}					t_stack_a;
+
+#endif

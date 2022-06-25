@@ -1,27 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   linked.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/10 19:08:41 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 10:17:28 by afenzl           ###   ########.fr       */
+/*   Created: 2022/06/25 10:05:57 by afenzl            #+#    #+#             */
+/*   Updated: 2022/06/25 10:29:29 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "../libft/libs.h"
 
-t_list	*ft_lstnew(void *content)
+typedef struct s_stack_a
 {
-	t_list	*new;
+	int					num;
+	struct s_stack_a	*next;
 
-	new = NULL;
-	new = malloc(sizeof(t_list));
-	if (new != NULL)
+}					t_stack_a;
+
+t_stack_a	*create_new(int i)
+{
+	t_stack_a	*head;
+
+	head = NULL;
+	head = malloc(sizeof(t_stack_a));
+	if (head != NULL)
 	{
-		new->content = content;
-		new->next = NULL;
+		head->num = i;
+		head->next = NULL;
 	}
-	return (new);
+	return (head);
+}
+
+
+
+int	main(void)
+{
+	t_stack_a	*head;
+	int			i;
+
+	i = 9;
+	head = create_new(i);
+	return (0);
 }

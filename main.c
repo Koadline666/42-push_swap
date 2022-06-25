@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:57:47 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 13:46:32 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/25 10:02:03 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@ int	main(int argc, char **argv)
 	{
 		check_input(argv);
 	}
+	// ft_create_stack();
+	// system("leaks push_swap");
 	return (0);
 }
