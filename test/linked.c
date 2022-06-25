@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 10:05:57 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 10:29:29 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/25 15:45:51 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 typedef struct s_stack_a
 {
 	int					num;
+	struct s_stack_a	*prev;
 	struct s_stack_a	*next;
 
 }					t_stack_a;
@@ -34,8 +35,6 @@ t_stack_a	*create_new(int i)
 	}
 	return (head);
 }
-
-
 
 int	main(void)
 {

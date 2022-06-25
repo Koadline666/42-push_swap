@@ -6,18 +6,33 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:55:46 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 14:30:56 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/25 17:10:36 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_numcpy(int i, int res, char *p);
+static long	ft_numcpy(int i, long res, char *p)
+{
+	while (p[i] != '\0')
+	{
+		if (p[i] >= '0' && p[i] <= '9')
+		{
+			res = res * 10 + p[i] - '0';
+			i++;
+			if (i > 11)
+				ft_error();
+		}
+		else
+			ft_error();
+	}
+	return (res);
+}
 
 int	ft_atoi_ps(const char *str)
 {
 	int				i;
-	unsigned int	res;
+	long			res;
 	int				n;
 	char			*p;
 
@@ -32,22 +47,7 @@ int	ft_atoi_ps(const char *str)
 		i++;
 	}
 	res = ft_numcpy(i, res, p);
-	if ((res > 2147483647 && n == 1) || (res > 2147483648 && n == -1))
+	if ((res > INT_MAX && n == 1) || (res > 2147483648 && n == -1))
 		ft_error();
 	return (res * n);
-}
-
-static int	ft_numcpy(int i, int res, char *p)
-{
-	while (p[i] != '\0')
-	{
-		if (p[i] >= '0' && p[i] <= '9')
-		{
-			res = res * 10 + p[i] - '0';
-			i++;
-		}
-		else
-			ft_error();
-	}
-	return (res);
 }
