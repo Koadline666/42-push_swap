@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:55:46 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 17:10:36 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/27 20:40:58 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static long	ft_numcpy(int i, long res, char *p)
 		{
 			res = res * 10 + p[i] - '0';
 			i++;
-			if (i > 11)
+			if (i > 11 && res > INT_MAX)
 				ft_error();
 		}
 		else

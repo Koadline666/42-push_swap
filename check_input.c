@@ -6,23 +6,22 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 17:15:56 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/27 20:35:51 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_each_arg(char *arg, t_stacks *stacks)
+void	check_each_arg(char *arg)
 {
 	int	i;
 
 	printf("string:\n|%s|\n", arg);
 	i = ft_atoi_ps(arg);
 	printf("number:\n|%i|\n", i);
-	
 }
 
-void	check_input(char **input, t_stacks *stacks)
+void	check_input(char **input)
 {
 	int		i;
 	int		j;
@@ -39,7 +38,7 @@ void	check_input(char **input, t_stacks *stacks)
 			ft_error();
 		while (split[j] != NULL)
 		{
-			check_each_arg(split[j], stacks);
+			check_each_arg(split[j]);
 			j++;
 		}
 		i++;

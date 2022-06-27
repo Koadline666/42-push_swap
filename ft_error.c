@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:16:12 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 18:17:27 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/06/27 20:28:01 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,5 @@
 void	ft_error(void)
 {
 	write(1, "Error\n", 6);
-	
-	// system("leaks push_swap");
 	exit(1);
 }
