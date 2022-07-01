@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_ps.c                                       :+:      :+:    :+:   */
+/*   atoi_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:55:46 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 17:05:30 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 19:49:37 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static long	ft_numcpy(int i, long res, char *p, t_stacks *stacks)
 	return (res);
 }
 
-int	ft_atoi_ps(const char *str, t_stacks *stacks)
+int	atoi_check(const char *str, t_stacks *stacks)
 {
 	int				i;
 	long			res;
@@ -42,6 +42,8 @@ int	ft_atoi_ps(const char *str, t_stacks *stacks)
 	p = (char *)str;
 	if (p[i] == '-' || p[i] == '+')
 	{
+		if (p[i + 1] == '\0')
+			ft_error(stacks);
 		if (p[i] == '-')
 			n = -1;
 		i++;

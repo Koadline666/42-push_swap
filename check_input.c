@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 17:25:08 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 18:28:45 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,28 @@
 
 void	check_for_dup(t_stacks *stacks)
 {
-	
+	t_lst	*cur;
+	t_lst	*cmp;
+
+	cur = *stacks->stack_a;
+	while(cur != NULL && cur->next != NULL)
+	{
+		cmp = cur->next;
+		while(cmp != NULL)
+		{
+			if (cur->content == cmp->content)
+				ft_error(stacks);
+			cmp = cmp->next;
+		}
+		cur = cur->next;
+	}
 }
 
 void	check_and_fill_each_arg(char *arg, t_stacks *stacks)
 {
 	int	i;
 
-	i = ft_atoi_ps(arg, stacks);
+	i = atoi_check(arg, stacks);
 	if (stacks->start == 1)
 	{
 		*stacks->stack_a = create_list(i);
@@ -29,7 +43,7 @@ void	check_and_fill_each_arg(char *arg, t_stacks *stacks)
 		stacks->start = 0;
 	}
 	else
-		stacks->cur_a = add_to_end_of_list(stacks->cur_a, i);
+		stacks->cur_a = add_next_node(stacks->cur_a, i);
 }
 
 void	check_input(char **input, t_stacks *stacks)

@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:57:54 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 17:19:14 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 20:05:57 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_lst	*create_list(int content)
 	return (new);
 }
 
-t_lst	*add_to_end_of_list(t_lst *prev_node, int content)
+t_lst	*add_next_node(t_lst *prev_node, int content)
 {
 	t_lst	*new;
 
@@ -45,3 +45,37 @@ t_lst	*add_to_end_of_list(t_lst *prev_node, int content)
 	}
 	return (new);
 }
+
+t_lst	*go_trough_list(t_lst *list)
+{
+	t_lst	*cur;
+
+	cur = list;
+	while(cur != NULL && cur->next != NULL)
+	{
+		cur = cur->next;
+	}
+	return(cur);
+}
+
+// untested and not used rn
+
+// int	list_len(t_lst *list)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (list != NULL)
+// 	{
+// 		list = list->next;
+// 		i++;
+// 	}
+// 	return (i);
+// }
+
+
+// void	add_front_list(t_lst **root, t_lst *new)
+// {
+// 	new->next = *root;
+// 	*root = new;
+// }
