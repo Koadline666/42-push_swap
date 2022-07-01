@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/27 20:55:07 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 16:38:59 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,33 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "libft/libs.h"
 
-typedef struct s_stack
+typedef struct s_lst
 {
-	int				num;
-	struct s_list	*next;
-
-}					t_stack;
+	int				content;
+	struct s_lst	*next;
+}					t_lst;
 
 typedef struct s_stacks
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	void	**head_a;
-	void	**head_b;
+	t_lst	**stack_a;
+	t_lst	*cur_a;
+	t_lst	**stack_b;
+	int		start;	
 
 }			t_stacks;
 
 void	ft_error(void);
 void	ft_free2(char **split);
-void	check_input(char **input);
+void	read_list(t_lst *list);
+void	check_input(char **input, t_stacks *stacks);
 int		ft_atoi_ps(const char *str);
-void	ft_create_stacks(t_stacks *stacks);
 // linked lists
+t_lst	*lstnew(int content);
+t_lst	*ft_lst_node_add_end(t_lst *prev_node, int content);
+void	deallocate_list(t_lst **root);
+
 
 #endif

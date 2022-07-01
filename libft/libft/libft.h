@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 16:31:16 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/25 16:27:43 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 16:10:25 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
-# include <limits.h>
 
 typedef struct s_list
 {

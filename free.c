@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:08:22 by afenzl            #+#    #+#             */
-/*   Updated: 2022/06/24 13:09:45 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 16:44:49 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,20 @@ void	ft_free2(char **split)
 		i++;
 	}
 	free(split);
+}
+
+
+void deallocate_list(t_lst **root)
+{
+	t_lst	*cur;
+	t_lst	*prev;
+
+	cur = *root;
+	while (cur != NULL)
+	{
+		prev = cur;
+		cur = cur->next;
+		free(prev);
+	}
+	*root = NULL;
 }

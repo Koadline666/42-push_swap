@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 10:20:27 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/27 21:03:21 by afenzl           ###   ########.fr        #
+#    Updated: 2022/06/30 16:10:51 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,6 @@ LIBFTSRC = ./libft/libft/ft_memset.c\
 		./libft/libft/ft_lstclear.c		\
 		./libft/libft/ft_lstdelone.c	\
 		./libft/libft/ft_lstiter.c		\
-		./libft/libft/ft_lstmap.c		\
 		./libft/printf/ft_printf.c		\
 		./libft/printf/ft_types.c		\
 		./libft/printf/ft_print_sciu.c	\
@@ -78,10 +77,6 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFTSRC)
 	make -C ./libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
-
-bonus: $(BONOBJ) $(LIBFTSRC)
-	make -C ./libft
-	$(CC) $(CFLAGS) $(LIBFT) $(BONOBJ) -o $(NAME)
 
 clean:
 	make fclean -C ./libft/

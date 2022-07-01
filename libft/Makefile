@@ -1,17 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/15 05:23:33 by afenzl            #+#    #+#              #
-#    Updated: 2022/06/24 11:34:07 by afenzl           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-AR := ar -rcs
-CFLAGS = -Wall -Wextra -Werror
+AR := ar rcs
 
 NAME = libs.a
 
@@ -89,5 +76,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re
