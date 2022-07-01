@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 18:37:45 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 20:13:47 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 20:16:23 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rl(t_lst **root)
 	t_lst	*last;
 
 	cur = *root;
-	if(root != NULL && cur != NULL)
+	if (root != NULL && cur != NULL)
 	{
 		last = go_trough_list(cur);
 		last->next = cur;
@@ -49,11 +49,11 @@ void	rrl(t_lst **root)
 	t_lst	*last;
 
 	cur = *root;
-	if(root != NULL && cur != NULL)
+	if (root != NULL && cur != NULL)
 	{
 		last = go_trough_list(cur);
 		last->next = cur;
-		while(cur->next != last)
+		while (cur->next != last)
 			cur = cur->next;
 		cur->next = NULL;
 		*root = last;

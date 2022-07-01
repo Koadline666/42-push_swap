@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 18:28:45 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 20:15:54 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	check_for_dup(t_stacks *stacks)
 	t_lst	*cmp;
 
 	cur = *stacks->stack_a;
-	while(cur != NULL && cur->next != NULL)
+	while (cur != NULL && cur->next != NULL)
 	{
 		cmp = cur->next;
-		while(cmp != NULL)
+		while (cmp != NULL)
 		{
 			if (cur->content == cmp->content)
 				ft_error(stacks);

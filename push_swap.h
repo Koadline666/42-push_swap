@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 20:03:40 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 20:16:27 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,5 @@ t_lst	*go_trough_list(t_lst *list);
 void	sl(t_lst **root);
 void	rl(t_lst **root);
 void	rrl(t_lst **root);
-
 
 #endif
