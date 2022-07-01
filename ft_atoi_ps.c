@@ -6,13 +6,13 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 12:55:46 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 15:55:28 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:05:30 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	ft_numcpy(int i, long res, char *p)
+static long	ft_numcpy(int i, long res, char *p, t_stacks *stacks)
 {
 	while (p[i] != '\0')
 	{
@@ -21,15 +21,15 @@ static long	ft_numcpy(int i, long res, char *p)
 			res = res * 10 + p[i] - '0';
 			i++;
 			if (i > 11 && res > INT_MAX)
-				ft_error();
+				ft_error(stacks);
 		}
 		else
-			ft_error();
+			ft_error(stacks);
 	}
 	return (res);
 }
 
-int	ft_atoi_ps(const char *str)
+int	ft_atoi_ps(const char *str, t_stacks *stacks)
 {
 	int				i;
 	long			res;
@@ -46,8 +46,8 @@ int	ft_atoi_ps(const char *str)
 			n = -1;
 		i++;
 	}
-	res = ft_numcpy(i, res, p);
+	res = ft_numcpy(i, res, p, stacks);
 	if ((res > INT_MAX && n == 1) || (res > 2147483648 && n == -1))
-		ft_error();
+		ft_error(stacks);
 	return (res * n);
 }

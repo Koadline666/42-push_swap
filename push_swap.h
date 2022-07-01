@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 16:38:59 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:13:26 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,14 @@ typedef struct s_stacks
 
 }			t_stacks;
 
-void	ft_error(void);
+void	ft_error(t_stacks *stacks);
 void	ft_free2(char **split);
 void	read_list(t_lst *list);
 void	check_input(char **input, t_stacks *stacks);
-int		ft_atoi_ps(const char *str);
+int		ft_atoi_ps(const char *str,  t_stacks *stacks);
 // linked lists
-t_lst	*lstnew(int content);
-t_lst	*ft_lst_node_add_end(t_lst *prev_node, int content);
+t_lst	*create_list(int content);
+t_lst	*add_to_end_of_list(t_lst *prev_node, int content);
 void	deallocate_list(t_lst **root);
-
 
 #endif
