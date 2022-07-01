@@ -6,11 +6,16 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 17:12:59 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:25:08 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_for_dup(t_stacks *stacks)
+{
+	
+}
 
 void	check_and_fill_each_arg(char *arg, t_stacks *stacks)
 {
@@ -50,4 +55,5 @@ void	check_input(char **input, t_stacks *stacks)
 		i++;
 		ft_free2(split);
 	}
+	check_for_dup(stacks);
 }
