@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 18:37:45 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 16:25:11 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/02 18:04:00 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	rl(t_lst **root, char c)
 		last->next = cur;
 		*root = cur->next;
 		cur->next = NULL;
-		ft_printf("rl\n");
 	}
 }
 

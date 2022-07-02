@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 16:43:56 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/02 17:35:45 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stacks
 void	ft_error(t_stacks *stacks);
 void	ft_free2(char **split);
 void	check_input(char **input, t_stacks *stacks);
+void	sort(t_stacks *stacks);
 
 // linked lists
 t_lst	*lst_new(int data);
