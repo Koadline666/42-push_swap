@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 16:29:41 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/02 16:43:56 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,17 @@ typedef struct s_stacks
 
 void	ft_error(t_stacks *stacks);
 void	ft_free2(char **split);
-void	read_list(t_lst **root);
-int		is_sorted(t_lst **root);
 void	check_input(char **input, t_stacks *stacks);
-int		atoi_check(const char *str, t_stacks *stacks);
+
 // linked lists
-t_lst	*create_list(int data);
-t_lst	*add_next_node(t_lst *prev_node, int data);
-void	deallocate_list(t_lst **root);
-t_lst	*go_trough_list(t_lst *list);
-int		list_len(t_lst **root);
-void	add_back(t_lst **lst, t_lst *new);
-void	delete_one_node(t_lst **lst);
-void	add_front(t_lst **lst, t_lst *new);
 t_lst	*lst_new(int data);
+t_lst	*go_trough_list(t_lst *list);
+void	add_front(t_lst **lst, t_lst *new);
+void	add_back(t_lst **lst, t_lst *new);
+int		is_sorted(t_lst **root);
+int		list_len(t_lst **root);
+void	delete_one_node(t_lst **lst);
+void	deallocate_list(t_lst **root);
 
 // operations
 void	sl(t_lst **root, char c);

@@ -6,11 +6,30 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 16:35:01 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/02 16:38:20 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	check_for_dup(t_stacks *stacks)
+{
+	t_lst	*cur;
+	t_lst	*cmp;
+
+	cur = stacks->stack_a;
+	while (cur != NULL && cur->next != NULL)
+	{
+		cmp = cur->next;
+		while (cmp != NULL)
+		{
+			if (cur->data == cmp->data)
+				ft_error(stacks);
+			cmp = cmp->next;
+		}
+		cur = cur->next;
+	}
+}
 
 static long	ft_numcpy(int i, long res, char *p, t_stacks *stacks)
 {
@@ -52,25 +71,6 @@ int	atoi_check(const char *str, t_stacks *stacks)
 	if ((res > INT_MAX && n == 1) || (res > 2147483648 && n == -1))
 		ft_error(stacks);
 	return (res * n);
-}
-
-void	check_for_dup(t_stacks *stacks)
-{
-	t_lst	*cur;
-	t_lst	*cmp;
-
-	cur = stacks->stack_a;
-	while (cur != NULL && cur->next != NULL)
-	{
-		cmp = cur->next;
-		while (cmp != NULL)
-		{
-			if (cur->data == cmp->data)
-				ft_error(stacks);
-			cmp = cmp->next;
-		}
-		cur = cur->next;
-	}
 }
 
 void	check_and_fill_each_arg(char *arg, t_stacks *stacks)
