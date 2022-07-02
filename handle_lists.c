@@ -1,26 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   lib_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/10 19:08:41 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 15:25:55 by afenzl           ###   ########.fr       */
+/*   Created: 2022/07/02 15:41:32 by afenzl            #+#    #+#             */
+/*   Updated: 2022/07/02 15:50:38 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+void	add_back(t_lst **lst, t_lst *new)
 {
-	t_list	*new;
+	t_lst	*tmp;
+
+	if (*lst)
+	{
+		tmp = go_trough_list(*lst);
+		tmp->next = &*new;
+	}
+	else
+		*lst = new;
+}
+
+void	delete_one_node(t_lst **lst)
+{
+	t_lst	*tmp;
+
+	tmp = (*lst)->next;
+	free(*lst);
+	*lst = tmp;
+}
+
+void	add_front(t_lst **lst, t_lst *new)
+{
+	if (*lst != NULL)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+	else
+		*lst = new;
+}
+
+t_lst	*lst_new(int data)
+{
+	t_lst	*new;
 
 	new = NULL;
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_lst));
 	if (new != NULL)
 	{
-		new->content = content;
+		new->data = data;
 		new->next = NULL;
 	}
 	return (new);

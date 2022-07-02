@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   sl.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 13:08:22 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 14:59:49 by afenzl           ###   ########.fr       */
+/*   Created: 2022/07/02 16:21:10 by afenzl            #+#    #+#             */
+/*   Updated: 2022/07/02 16:25:15 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_free2(char **split)
-{
-	int	i;
-
-	i = 0;
-	while (split[i] != NULL)
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-}
-
-void	deallocate_list(t_lst **root)
+void	sl(t_lst **root, char c)
 {
 	t_lst	*cur;
-	t_lst	*prev;
+	int		tmp;
 
-	if (root)
+	cur = *root;
+	if (c == 'a')
+		write(1, "sa\n", 3);
+	else if ('b')
+		write(1, "sb\n", 3);
+	if (cur != NULL && cur->next != NULL)
 	{
-		cur = *root;
-		while (cur != NULL)
-		{
-			prev = cur;
-			cur = cur->next;
-			free(prev);
-		}
-		*root = NULL;
+		tmp = cur->data;
+		cur->data = cur->next->data;
+		cur->next->data = tmp;
+		ft_printf("sl\n");
 	}
+}
+
+void	ss(t_stacks *stacks)
+{
+	sl(&stacks->stack_a, 's');
+	sl(&stacks->stack_b, 's');
+	write(1, "ss\n", 3);
 }

@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   pl.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 19:16:12 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 16:20:35 by afenzl           ###   ########.fr       */
+/*   Created: 2022/07/02 16:22:49 by afenzl            #+#    #+#             */
+/*   Updated: 2022/07/02 16:25:07 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_error(t_stacks *stacks)
+void	pb(t_stacks *stacks)
 {
-	write(1, "Error\n", 6);
-	deallocate_list(&stacks->stack_a);
-	exit(1);
+	write(1, "pb\n", 3);
+	if (stacks->stack_a != NULL)
+	{
+		add_front(&stacks->stack_b, lst_new(stacks->stack_a->data));
+		delete_one_node(&stacks->stack_a);
+	}
+}
+
+void	pa(t_stacks *stacks)
+{
+	write(1, "pa\n", 3);
+	if (stacks->stack_b != NULL)
+	{
+		add_front(&stacks->stack_a, lst_new(stacks->stack_b->data));
+		delete_one_node(&stacks->stack_b);
+	}
 }

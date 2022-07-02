@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 10:20:27 by afenzl            #+#    #+#              #
-#    Updated: 2022/07/01 18:56:10 by afenzl           ###   ########.fr        #
+#    Updated: 2022/07/02 16:35:26 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM := rm -f
 
-SRC =	main.c check_input.c ft_error.c atoi_check.c free.c make_stacks.c\
-		operations.c
+SRC =	main.c check_input.c ft_error.c free.c lists.c handle_lists.c \
+		./operations/pl.c ./operations/sl.c ./operations/rl.c
 OBJ = $(SRC:.c=.o)
 
 BONSRC = 

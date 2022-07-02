@@ -6,24 +6,66 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 20:15:54 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/02 16:35:01 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static long	ft_numcpy(int i, long res, char *p, t_stacks *stacks)
+{
+	while (p[i] != '\0')
+	{
+		if (p[i] >= '0' && p[i] <= '9')
+		{
+			res = res * 10 + p[i] - '0';
+			i++;
+			if (i > 11 && res > INT_MAX)
+				ft_error(stacks);
+		}
+		else
+			ft_error(stacks);
+	}
+	return (res);
+}
+
+int	atoi_check(const char *str, t_stacks *stacks)
+{
+	int				i;
+	long			res;
+	int				n;
+	char			*p;
+
+	i = 0;
+	res = 0;
+	n = 1;
+	p = (char *)str;
+	if (p[i] == '-' || p[i] == '+')
+	{
+		if (p[i + 1] == '\0')
+			ft_error(stacks);
+		if (p[i] == '-')
+			n = -1;
+		i++;
+	}
+	res = ft_numcpy(i, res, p, stacks);
+	if ((res > INT_MAX && n == 1) || (res > 2147483648 && n == -1))
+		ft_error(stacks);
+	return (res * n);
+}
 
 void	check_for_dup(t_stacks *stacks)
 {
 	t_lst	*cur;
 	t_lst	*cmp;
 
-	cur = *stacks->stack_a;
+	cur = stacks->stack_a;
 	while (cur != NULL && cur->next != NULL)
 	{
 		cmp = cur->next;
 		while (cmp != NULL)
 		{
-			if (cur->content == cmp->content)
+			if (cur->data == cmp->data)
 				ft_error(stacks);
 			cmp = cmp->next;
 		}
@@ -36,14 +78,7 @@ void	check_and_fill_each_arg(char *arg, t_stacks *stacks)
 	int	i;
 
 	i = atoi_check(arg, stacks);
-	if (stacks->start == 1)
-	{
-		*stacks->stack_a = create_list(i);
-		stacks->cur_a = *stacks->stack_a;
-		stacks->start = 0;
-	}
-	else
-		stacks->cur_a = add_next_node(stacks->cur_a, i);
+	add_back(&stacks->stack_a, lst_new(i));
 }
 
 void	check_input(char **input, t_stacks *stacks)

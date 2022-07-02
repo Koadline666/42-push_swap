@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/01 20:16:27 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/02 16:29:41 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,33 +21,42 @@
 
 typedef struct s_lst
 {
-	int				content;
+	int				data;
 	struct s_lst	*next;
 }					t_lst;
 
 typedef struct s_stacks
 {
-	t_lst	**stack_a;
-	t_lst	*cur_a;
-	t_lst	**stack_b;
-	int		start;
+	t_lst	*stack_a;
+	t_lst	*stack_b;
 
 }			t_stacks;
 
 void	ft_error(t_stacks *stacks);
 void	ft_free2(char **split);
-void	read_list(t_lst **list);
+void	read_list(t_lst **root);
+int		is_sorted(t_lst **root);
 void	check_input(char **input, t_stacks *stacks);
-int		atoi_check(const char *str,  t_stacks *stacks);
+int		atoi_check(const char *str, t_stacks *stacks);
 // linked lists
-t_lst	*create_list(int content);
-t_lst	*add_next_node(t_lst *prev_node, int content);
+t_lst	*create_list(int data);
+t_lst	*add_next_node(t_lst *prev_node, int data);
 void	deallocate_list(t_lst **root);
 t_lst	*go_trough_list(t_lst *list);
+int		list_len(t_lst **root);
+void	add_back(t_lst **lst, t_lst *new);
+void	delete_one_node(t_lst **lst);
+void	add_front(t_lst **lst, t_lst *new);
+t_lst	*lst_new(int data);
 
 // operations
-void	sl(t_lst **root);
-void	rl(t_lst **root);
-void	rrl(t_lst **root);
+void	sl(t_lst **root, char c);
+void	ss(t_stacks *stacks);
+void	rl(t_lst **root, char c);
+void	rr(t_stacks *stacks);
+void	rrl(t_lst **root, char c);
+void	rrr(t_stacks *stacks);
+void	pb(t_stacks *stacks);
+void	pa(t_stacks *stacks);
 
 #endif
