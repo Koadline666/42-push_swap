@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 17:14:01 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 19:54:46 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 20:52:29 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ int	find_max(t_lst **root)
 	return (i);
 }
 
-int	get_bit_len(int num)
+int	get_bit_len(t_stacks *stacks)
 {
 	int	i;
+	int	num;
 
 	i = 0;
+	num = find_max(&stacks->stack_a);
 	while (num != 0)
 	{
 		num = num >> 1;
@@ -41,16 +43,15 @@ int	get_bit_len(int num)
 	return (i);
 }
 
-void	radix_sort(t_stacks *stacks)
+void	sort_big_stack(t_stacks *stacks)
 {
 	int		max;
 	int		i;
 	int		len;
 	int		j;
-	
+
 	i = 0;
-	max = find_max(&stacks->stack_a);
-	max = get_bit_len(max);
+	max = get_bit_len(stacks);
 	len = list_len(&stacks->stack_a);
 	while (i < max)
 	{
@@ -67,10 +68,4 @@ void	radix_sort(t_stacks *stacks)
 			pa(stacks);
 		i++;
 	}
-}
-
-void	sort_big_stack(t_stacks *stacks)
-{
-	index_stack(stacks);
-	radix_sort(stacks);
 }
