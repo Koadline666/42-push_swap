@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:57:47 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 19:13:21 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 16:19:29 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,10 @@ void	test_operators(t_stacks *stacks)
 	pa(stacks);
 	print_list(stacks->stack_a, stacks->stack_b);
 	printf("==============================================================\n");
-	pb(stacks);
-	pb(stacks);
-	pb(stacks);
+	rrl(&stacks->stack_a, 'a');
 	print_list(stacks->stack_a, stacks->stack_b);
 	printf("==============================================================\n");
-	rrl(&stacks->stack_b, 'b');
+	rl(&stacks->stack_a, 'a');
 	print_list(stacks->stack_a, stacks->stack_b);
 }
 
@@ -70,9 +68,9 @@ int	main(int argc, char **argv)
 		check_input(argv, &stacks);
 		// test_operators(&stacks);
 		// print_list(stacks.stack_a, stacks.stack_b);
-		sort(&stacks);
-		// printf("the list is sorted: %i\n", is_sorted(&stacks.stack_a));
 		// print_list(stacks.stack_a, stacks.stack_b);
+		sort(&stacks);
+		printf("the list is sorted: %i\n", is_sorted(&stacks.stack_a));
 	}
 	deallocate_list(&stacks.stack_a);
 	return (0);
