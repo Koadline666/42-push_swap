@@ -6,11 +6,12 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:57:47 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 20:54:01 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 21:06:48 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void	print_list(t_lst *list_a, t_lst *list_b)
 {

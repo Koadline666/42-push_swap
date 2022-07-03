@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 19:06:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 20:53:49 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 21:03:15 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,6 @@ void	index_stack(t_stacks *stacks)
 		}
 		i++;
 	}
-	if (arr != NULL)
-		free(arr);
+	// if (arr != NULL)
+	// 	free(arr);
 }

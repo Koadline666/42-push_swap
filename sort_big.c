@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 17:14:01 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 20:52:29 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 21:06:02 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	sort_big_stack(t_stacks *stacks)
 	int		j;
 
 	i = 0;
+	index_stack(stacks);
 	max = get_bit_len(stacks);
 	len = list_len(&stacks->stack_a);
 	while (i < max)
