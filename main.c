@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:57:47 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 16:19:29 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 19:52:41 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	print_list(t_lst *list_a, t_lst *list_b)
 		ft_printf("%d\t\t", i);
 		if (list_a != NULL)
 		{
-			ft_printf("%d\t\t\t", (list_a)->data);
+			ft_printf("%d\t%d\t\t", (list_a)->data, list_a->simp);
 			list_a = (list_a)->next;
 		}
 		if (list_b != NULL)
 		{
-			ft_printf("%d\t", (list_b)->data);
+			ft_printf("%d\t%d", (list_b)->data, list_b->simp);
 			list_b = (list_b)->next;
 		}
 		write(1, "\n", 1);
@@ -36,7 +36,7 @@ void	print_list(t_lst *list_a, t_lst *list_b)
 	}
 	while (list_b != NULL)
 	{
-		ft_printf("%d \t\t \t \t\t%d\t\n", i, (list_b)->data);
+		ft_printf("%d \t\t \t \t\t%d\t%d\n", i, (list_b)->data, list_b->simp);
 		i++;
 		list_b = (list_b)->next;
 	}
@@ -68,9 +68,9 @@ int	main(int argc, char **argv)
 		check_input(argv, &stacks);
 		// test_operators(&stacks);
 		// print_list(stacks.stack_a, stacks.stack_b);
-		// print_list(stacks.stack_a, stacks.stack_b);
 		sort(&stacks);
-		printf("the list is sorted: %i\n", is_sorted(&stacks.stack_a));
+		// printf("the list is sorted: %i\n", is_sorted(&stacks.stack_a));
+		// print_list(stacks.stack_a, stacks.stack_b);
 	}
 	deallocate_list(&stacks.stack_a);
 	return (0);

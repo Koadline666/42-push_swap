@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib_functions.c                                    :+:      :+:    :+:   */
+/*   handle_lists.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:41:32 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 15:50:38 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 19:37:29 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	add_front(t_lst **lst, t_lst *new)
 		*lst = new;
 }
 
-t_lst	*lst_new(int data)
+t_lst	*lst_new(int data, int simp)
 {
 	t_lst	*new;
 
@@ -54,6 +54,7 @@ t_lst	*lst_new(int data)
 	if (new != NULL)
 	{
 		new->data = data;
+		new->simp = simp;
 		new->next = NULL;
 	}
 	return (new);

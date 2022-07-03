@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 17:35:45 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 19:38:41 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_lst
 {
 	int				data;
+	int				simp;
 	struct s_lst	*next;
 }					t_lst;
 
@@ -32,13 +33,19 @@ typedef struct s_stacks
 
 }			t_stacks;
 
+void	print_list(t_lst *list_a, t_lst *list_b);
+
 void	ft_error(t_stacks *stacks);
 void	ft_free2(char **split);
 void	check_input(char **input, t_stacks *stacks);
 void	sort(t_stacks *stacks);
+void	sort_small_stack(t_stacks *stacks);
+void	sort_big_stack(t_stacks *stacks);
+void	index_stack(t_stacks *stacks);
+
 
 // linked lists
-t_lst	*lst_new(int data);
+t_lst	*lst_new(int data, int simp);
 t_lst	*go_trough_list(t_lst *list);
 void	add_front(t_lst **lst, t_lst *new);
 void	add_back(t_lst **lst, t_lst *new);

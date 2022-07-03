@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 10:20:27 by afenzl            #+#    #+#              #
-#    Updated: 2022/07/02 17:08:06 by afenzl           ###   ########.fr        #
+#    Updated: 2022/07/03 19:08:11 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM := rm -f
 
 SRC =	main.c check_input.c ft_error.c free.c lists.c handle_lists.c \
 		./operations/pl.c ./operations/sl.c ./operations/rl.c \
-		sort.c
+		sort.c sort_small.c sort_big.c index.c
 OBJ = $(SRC:.c=.o)
 
 BONSRC = 

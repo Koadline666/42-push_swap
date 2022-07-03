@@ -6,93 +6,19 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 16:58:46 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 16:30:35 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 19:52:07 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_lst **cur, char c)
-{
-	if ((*cur)->data > (*cur)->next->data && (*cur)->data > (*cur)->next->next->data)
-		rl(cur, c);
-	else if ((*cur)->data < (*cur)->next->data && (*cur)->next->data > (*cur)->next->next->data)
-		rrl(cur, c);
-	if ((*cur)->data > (*cur)->next->data)
-		sl(cur, c);
-}
-
-int	find_min(t_lst **root)
-{
-	t_lst	*cur;
-	int		i;
-
-	cur = *root;
-	i = cur->data;
-	while (cur != NULL)
-	{
-		if (i > cur->data)
-			i = cur->data;
-		cur = cur->next;
-	}
-	return (i);
-}
-
-int	place_of_min(t_lst **root)
-{
-	t_lst	*cur;
-	int		place;
-	int		min;
-
-	cur = *root;
-	place = 1;
-	min = find_min(root);
-	while (cur != NULL && cur->data != min)
-	{
-		cur = cur->next;
-		place++;
-	}
-	return (place);
-}
-
-void	sort_small_stack(t_stacks *stacks)
-{
-	t_lst	*cur;
-	int		place;
-
-	place = 0;
-	cur = stacks->stack_a;
-	if (list_len(&stacks->stack_a) == 2)
-	{
-		sl(&stacks->stack_a, 'a');
-		return ;
-	}
-	while (list_len(&stacks->stack_a) != 3)
-	{
-		if (place_of_min(&stacks->stack_a) < 4)
-		{
-			while (place_of_min(&stacks->stack_a) != 1)
-				rl(&stacks->stack_a, 'a');
-		}
-		else
-			while (place_of_min(&stacks->stack_a) != 1)
-				rrl(&stacks->stack_a, 'a');
-		pb(stacks);
-	}
-	sort_three(&stacks->stack_a, 'a');
-	while (stacks->stack_b != NULL)
-		pa(stacks);
-}
-
 void	sort(t_stacks *stacks)
 {
-	if (is_sorted(&stacks->stack_a) == 1)
-		return ;
-	else if (list_len(&stacks->stack_a) <= 50)
-		sort_small_stack(stacks);
-	// while (1)
-	// {
-	// 	if (is_sorted(&stacks->stack_a) == 1)
-	// 		break ;
-	// }
+	if (is_sorted(&stacks->stack_a) == 0)
+	{
+		if (list_len(&stacks->stack_a) <= 3)
+			sort_small_stack(stacks);
+		else
+			sort_big_stack(stacks);
+	}
 }

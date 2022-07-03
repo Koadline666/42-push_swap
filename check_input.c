@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:07:21 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 16:38:20 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/03 19:39:26 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	check_and_fill_each_arg(char *arg, t_stacks *stacks)
 	int	i;
 
 	i = atoi_check(arg, stacks);
-	add_back(&stacks->stack_a, lst_new(i));
+	add_back(&stacks->stack_a, lst_new(i, 0));
 }
 
 void	check_input(char **input, t_stacks *stacks)
