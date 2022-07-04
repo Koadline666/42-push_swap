@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 10:20:27 by afenzl            #+#    #+#              #
-#    Updated: 2022/07/04 14:07:38 by afenzl           ###   ########.fr        #
+#    Updated: 2022/07/04 15:23:51 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ clean:
 	$(RM) $(OBJ) $(BONOBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONNAME)
 
 re: fclean all
 
