@@ -6,11 +6,19 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:49:47 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/04 15:01:21 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/04 15:04:44 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_error_cmd(t_stacks *stacks, char *cmd)
+{
+	write(1, "Error\n", 6);
+	free(cmd);
+	deallocate_list(&stacks->stack_a);
+	exit(1);
+}
 
 void	do_the_cmd(char *cmd, t_stacks *stacks)
 {
@@ -37,10 +45,7 @@ void	do_the_cmd(char *cmd, t_stacks *stacks)
 	else if (ft_strcmp(cmd, "rrr\n") == 0)
 		rr(stacks);
 	else
-	{
-		free(cmd);
-		ft_error(stacks);
-	}
+		ft_error_cmd(stacks, cmd);
 }
 
 void	exec_cmds(t_stacks *stacks)
