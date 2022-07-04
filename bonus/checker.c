@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:49:47 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/04 14:56:55 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/04 15:01:21 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	exec_cmds(t_stacks *stacks)
 {
 	char	*cmd;
 
-	cmd = ft_strdup("");
+	cmd = "";
 	while (cmd != NULL)
 	{
 		cmd = get_next_line(0);
@@ -71,7 +71,6 @@ int	main(int argc, char **argv)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);
-		system("leaks checker");
 		deallocate_list(&stacks.stack_a);
 	}
 }
