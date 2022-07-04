@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 17:09:00 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 17:10:26 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/04 13:47:11 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ int	place_of_min(t_lst **root)
 
 void	sort_three(t_lst **cur, char c)
 {
-	if ((*cur)->data > (*cur)->next->data && (*cur)->data > (*cur)->next->next->data)
+	if ((*cur)->data > (*cur)->next->data
+		&& (*cur)->data > (*cur)->next->next->data)
 		rl(cur, c);
-	else if ((*cur)->data < (*cur)->next->data && (*cur)->next->data > (*cur)->next->next->data)
+	else if ((*cur)->data < (*cur)->next->data
+		&& (*cur)->next->data > (*cur)->next->next->data)
 		rrl(cur, c);
 	if ((*cur)->data > (*cur)->next->data)
 		sl(cur, c);
@@ -69,7 +71,7 @@ void	sort_small_stack(t_stacks *stacks)
 	}
 	while (list_len(&stacks->stack_a) != 3)
 	{
-		if (place_of_min(&stacks->stack_a) < 4)
+		if (place_of_min(&stacks->stack_a) < (list_len(&stacks->stack_a) / 2))
 		{
 			while (place_of_min(&stacks->stack_a) != 1)
 				rl(&stacks->stack_a, 'a');

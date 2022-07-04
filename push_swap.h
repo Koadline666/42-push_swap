@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/03 19:38:41 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/04 14:25:02 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_stacks
 }			t_stacks;
 
 void	print_list(t_lst *list_a, t_lst *list_b);
+void	test_operators(t_stacks *stacks);
 
 void	ft_error(t_stacks *stacks);
 void	ft_free2(char **split);
@@ -42,7 +43,6 @@ void	sort(t_stacks *stacks);
 void	sort_small_stack(t_stacks *stacks);
 void	sort_big_stack(t_stacks *stacks);
 void	index_stack(t_stacks *stacks);
-
 
 // linked lists
 t_lst	*lst_new(int data, int simp);
@@ -63,5 +63,8 @@ void	rrl(t_lst **root, char c);
 void	rrr(t_stacks *stacks);
 void	pb(t_stacks *stacks);
 void	pa(t_stacks *stacks);
+
+// bonus
+void	check_input_checker(char **input, t_stacks *stacks);
 
 #endif

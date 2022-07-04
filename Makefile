@@ -6,21 +6,25 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 10:20:27 by afenzl            #+#    #+#              #
-#    Updated: 2022/07/03 19:08:11 by afenzl           ###   ########.fr        #
+#    Updated: 2022/07/04 14:07:38 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BONNAME = checker
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM := rm -f
 
 SRC =	main.c check_input.c ft_error.c free.c lists.c handle_lists.c \
 		./operations/pl.c ./operations/sl.c ./operations/rl.c \
-		sort.c sort_small.c sort_big.c index.c
+		sort.c sort_small.c sort_big.c index.c \
+		read_lists.c
 OBJ = $(SRC:.c=.o)
 
-BONSRC = 
+BONSRC = ./bonus/checker.c check_input.c ft_error.c free.c lists.c handle_lists.c \
+		./operations/pl.c ./operations/sl.c ./operations/rl.c \
+		read_lists.c 
 BONOBJ = $(BONSRC:.c=.o)
 
 LIBFT = libft/libs.a
@@ -79,6 +83,10 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFTSRC)
 	make -C ./libft
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+
+bonus: $(BONOBJ) $(LIBFTSRC)
+	make -C ./libft
+	$(CC) $(CFLAGS) $(BONOBJ) $(LIBFT) -o $(BONNAME)
 
 clean:
 	make fclean -C ./libft/

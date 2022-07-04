@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/02 16:58:46 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/04 13:40:27 by afenzl           ###   ########.fr       */
+/*   Created: 2022/07/04 14:21:29 by afenzl            #+#    #+#             */
+/*   Updated: 2022/07/04 14:23:12 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sort(t_stacks *stacks)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	if (is_sorted(&stacks->stack_a) == 0)
-	{
-		if (list_len(&stacks->stack_a) <= 50)
-			sort_small_stack(stacks);
-		else
-			sort_big_stack(stacks);
-	}
+	size_t			i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2 != NULL)
+		i++;
+	return (s1[i] - s2[i]);
 }
