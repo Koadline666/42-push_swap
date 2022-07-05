@@ -6,25 +6,11 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 19:06:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/04 15:05:58 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/04 15:47:56 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print2(int *arr, int len)
-{
-	int	i;
-
-	i = 0;
-	ft_printf("thats what is in the array:\t");
-	while (len--)
-	{
-		ft_printf("%i", arr[i]);
-		i++;
-	}
-	ft_printf("\n");
-}
 
 int	*fill_arr(t_lst **root)
 {

@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:32:55 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/04 14:25:02 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/05 13:26:18 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,12 @@ void	pa(t_stacks *stacks);
 
 // bonus
 void	check_input_checker(char **input, t_stacks *stacks);
-
+void	sl_bonus(t_lst **root);
+void	ss_bonus(t_stacks *stacks);
+void	rl_bonus(t_lst **root);
+void	rr_bonus(t_stacks *stacks);
+void	rrl_bonus(t_lst **root);
+void	rrr_bonus(t_stacks *stacks);
+void	pb_bonus(t_stacks *stacks);
+void	pa_bonus(t_stacks *stacks);
 #endif

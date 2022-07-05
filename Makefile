@@ -6,7 +6,7 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 10:20:27 by afenzl            #+#    #+#              #
-#    Updated: 2022/07/04 15:23:51 by afenzl           ###   ########.fr        #
+#    Updated: 2022/07/05 13:24:17 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC =	main.c check_input.c ft_error.c free.c lists.c handle_lists.c \
 OBJ = $(SRC:.c=.o)
 
 BONSRC = ./bonus/checker.c check_input.c ft_error.c free.c lists.c handle_lists.c \
-		./operations/pl.c ./operations/sl.c ./operations/rl.c \
+		./bonus/operations/pl.c ./bonus/operations/sl.c ./bonus/operations/rl.c \
 		read_lists.c 
 BONOBJ = $(BONSRC:.c=.o)
 
