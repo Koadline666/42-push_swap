@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 17:09:00 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/04 13:47:11 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/07/27 12:55:51 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,6 @@ void	sort_three(t_lst **cur, char c)
 
 void	sort_small_stack(t_stacks *stacks)
 {
-	t_lst	*cur;
-	int		place;
-
-	place = 0;
-	cur = stacks->stack_a;
 	if (list_len(&stacks->stack_a) == 2)
 	{
 		sl(&stacks->stack_a, 'a');

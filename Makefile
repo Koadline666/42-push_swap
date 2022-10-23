@@ -6,14 +6,14 @@
 #    By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/24 10:20:27 by afenzl            #+#    #+#              #
-#    Updated: 2022/07/05 13:24:17 by afenzl           ###   ########.fr        #
+#    Updated: 2022/10/21 16:39:05 by afenzl           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 BONNAME = checker
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 RM := rm -f
 
 SRC =	main.c check_input.c ft_error.c free.c lists.c handle_lists.c \

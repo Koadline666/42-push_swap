@@ -6,7 +6,7 @@
 /*   By: afenzl <afenzl@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:08:22 by afenzl            #+#    #+#             */
-/*   Updated: 2022/07/02 14:59:49 by afenzl           ###   ########.fr       */
+/*   Updated: 2022/10/21 16:41:10 by afenzl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	deallocate_list(t_lst **root)
 	t_lst	*cur;
 	t_lst	*prev;
 
-	if (root)
+	if (root && *root)
 	{
 		cur = *root;
 		while (cur != NULL)
