@@ -1,5 +1,4 @@
 # 42-push_swap
-#### **
 This is a project for [42Heilbronn](https://www.42heilbronn.de/en/curriculum/) school's curriculum.
 The goal of the project is to sort a stack of integers in ascending order using a limited set of operations.
 
