@@ -9,17 +9,17 @@ At the beginning, a contains a random amount of negative and/or positive numbers
 The goal is to sort a in ascending order with as few operations as possible.
 
 The following operations are available:
-+ __sa__	Swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.
-+ __sb__	Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
-+ __ss__	sa and sb at the same time.
-+ __pa__  Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
-+ __pb__  Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
-+ __ra__	Shift up all elements of stack a by 1. The first element becomes the last one.
-+ __rb__	Shift up all elements of stack b by 1. The first element becomes the last one.
-+ __rr__	ra and rb at the same time.
-+ __rra__	Shift down all elements of stack a by 1. The last element becomes the first one.
-+ __rrb__	Shift down all elements of stack b by 1. The last element becomes the first one.
-+ __rrr__	rra and rrb at the same time.
++ __sa__	 (`swap a`) swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.
++ __sb__	 (`swap b`) swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
++ __ss__	 (`swap both`) sa and sb at the same time.
++ __pa__   (`push a`) take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
++ __pb__   (`push b`) take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
++ __ra__	 (`rotate a`) shift up all elements of stack a by 1. The first element becomes the last one.
++ __rb__	 (`rotate a`) shift up all elements of stack b by 1. The first element becomes the last one.
++ __rr__	 (`rotate both`) ra and rb at the same time.
++ __rra__	(`reverse rotate a`) shift down all elements of stack a by 1. The last element becomes the first one.
++ __rrb__	(`reverse rotate b`) shift down all elements of stack b by 1. The last element becomes the first one.
++ __rrr__	(`reverse rotate both`) rra and rrb at the same time.
 
 if the given input is
 + not a number
@@ -65,5 +65,8 @@ __`./push_swap num1 num2 num3 ... numn | ./checker num1 num2 num3 ... numn`__ <s
 it will display __OK__ if the instructions successfully sorted the stack and __KO__ if not.
 
 ## What i learned:
-
++ Learned about different `types of sorting algorithms`
++ Gained more practical knowledge about `linked lists`
++ Learned about `stacks`
++ Learned about `time` and `memory complexity`
 
