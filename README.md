@@ -28,6 +28,8 @@ if the given input is
 the program displays `Error`
 , otherwise it dispays the operations divided by a newline
 
+To visualize the sorting operations this [Visualizer](https://github.com/o-reo/push_swap_visualizer) is quite helpful.
+
 ## Description
 ### mandatory part:
 **run _`make`_**
